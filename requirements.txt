@@ -1,0 +1,4 @@
+flask==2.0.2
+SQLAlchemy==1.4.26
+SQLAlchemy-Utils==0.37.9
+Werkzeug==2.0.2

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Клиенты</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Клиенты</h1>
+        {% for el in client_by_id %}
+        <div class="alert alert-info">
+            <p>ID: {{el.id}}</p>
+            <p>Name: {{el.name}}</p>
+            <p>VIP: {{el.is_vip}}</p>
+        </div>
+        <a href='/show_client/{{ el.id }}/del' class="btn btn-lg btn-danger">Удалить</a>
+        {% endfor %}
+        <div>
+        </div>
+    </div>
+</body>
+</html>

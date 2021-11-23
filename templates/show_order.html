@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказ</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Заказ</h1>
+        {% for el in order_by_id %}
+        <div class="alert alert-info">
+            <p>ID: {{el.id}}</p>
+            <p>From: {{el.address_from}}</p>
+            <p>To: {{el.address_to}}</p>
+            <p>Client_id: {{el.client_id}}</p>
+            <p>Driver_id: {{el.driver_id}}</p>
+            <p>Time: {{el.date_created}}</p>
+            <p>Status: {{el.status}}</p>
+            <a href='/show_order/{{ el.id }}/cancel' class="btn btn-lg btn-warning">Отменить</a>
+        </div>
+        <form action='/show_order/{{ el.id }}/change' method="post" class="alert alert-info">
+            <h1 class="h3 mb-3 fw-normal">Изменить заказ</h1>
+            <p>ID: {{el.id}}</p>
+            <p>From: {{el.address_from}}</p>
+            <p>To: {{el.address_to}}</p>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="Client_id" name="Client_id" required>
+              <label for="Client_id">Client_id</label>
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="Driver_id" name="Driver_id" required>
+              <label for="Driver_id">Driver_id</label>
+            </div>
+            <p>Time: {{el.date_created}}</p>
+            <p>Status: {{el.status}}</p>
+            <button  class="btn btn-lg btn-primary" type="submit">Изменить</button>
+        </form>
+
+        {% endfor %}
+        <div>
+        </div>
+    </div>
+</body>
+</html>

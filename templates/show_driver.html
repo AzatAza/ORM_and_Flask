@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Водители</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Водители</h1>
+        {% for el in driver_by_id %}
+        <div class="alert alert-info">
+            <p>ID: {{el.id}}</p>
+            <p>Name: {{el.name}}</p>
+            <p>Car: {{el.car}}</p>
+        </div>
+        <a href='/show_driver/{{ el.id }}/del' class="btn btn-lg btn-danger">Удалить</a>
+        {% endfor %}
+        <div>
+            <a href="/delete_client" type="button"
+        </div>
+    </div>
+</body>
+</html>

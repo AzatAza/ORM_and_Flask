@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Client</title>
+</head>
+<body>
+    <main class="container">
+      <form action="/new_client" method="post">
+        <h1 class="h3 mb-3 fw-normal">Добавить клиента</h1>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+          <label for="name">Имя</label>
+        </div>
+        <div class="form-floating">
+            <p>Do you have a VIP?</p>
+            <p><input type="radio" id="True" name="is_vip" value="True">Yes</p>
+            <p><input type="radio" id="False" name="is_vip" value="False">No</p>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">Добавить</button>
+      </form>
+      <form action="/show_client" method="post">
+        <h1 class="h3 mb-3 fw-normal">Найти клиента по ID</h1>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="client_id" name="client_id" placeholder="client_id" required>
+          <label for="client_id">ID</label>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">Найти</button>
+      </form>
+      <h1></h1>
+      <div>
+        <a  href="/" class="w-100 btn btn-lg btn-primary" type="button">На главную</a>
+      </div>
+    </main>
+</body>
+</html>
